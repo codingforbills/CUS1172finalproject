@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width", initial-scale=1.0">
+        <!-- Apply Bootstrap CDN-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- Apply CSS Sheet-->
+        <link rel="stylesheet" href="cascade.css">
+        <!--Apply Bootstrap and Handlebars.js-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+        <!--Apply Javascript-->
+        <script src="app.js"></script>"
+    </head>
+    <body>
+        <div class= "container p1">
+            <h2>The SJU CUS Directory</h2>
+        </div>
+
+    <form onsubmit="return false;" id="queryForm"><hr>
+
+        <!--Course Code-->
+        <label for="codeQuery"> Search by Course Code</label>
+        <input type="text" id="codeQuery" name="codeQuery" value=""><br>
+        <input id="queryByCode" type="button" onclick="updateView(this)" value="Query" data-querytype="bycc">
+        <br>
+        <!--Course Title-->
+         <label for="codeQuery"> Search by Course Title</label>
+        <input type="text" id="codeQuery" name="codeQuery" value=""><br>
+        <input id="queryByCode" type="button" onclick="updateView(this)" value="Query" data-querytype="bycc">
+        <br>
+        <!--Course Instructor-->
+        <label for="codeQuery"> Search by Course Instructor</label>
+        <input type="text" id="codeQuery" name="codeQuery" value=""><br>
+        <input id="queryByCode" type="button" onclick="updateView(this)" value="Query" data-querytype="bycc">
+        <br>
+
+        <!--Course Level-->
+        <label for="codeQuery"> Search by Course level</label>
+        <input type="text" id="codeQuery" name="codeQuery" value=""><br>
+        <input id="queryByCode" type="button" onclick="updateView(this)" value="Query" data-querytype="bycc">
+        <br>
+        <!--Course Level & Instructor-->
+        <label for="lvl&nmQuery"> Search by Course level and instructor</label>
+        <input type="text" id="levQuery" name="levQuery" value=""><br>
+        <input type="text" id="nmQuery" name="nmQuery" value=""><br>
+        <input id="queryNM&LV" type="button" onclick="updateView(this)" value="Query" data-querytype="queryNM&LV">
+        <br>
+    </form>
+    <div id="results">
+        <!--Show Results-->
+    </div>
+</body>
+</html>
+    <script id="results_view" type="text/x-handlebars-template">
+        <table>
+            <ul>
+                {{
+                    #all courses
+                }}
+                <li>
+                    CODE:{{this.course_code}}
+                    TITLE:{{this.title}}
+                    PROFESSOR:{{this.professor}}
+                    LEVEL: {{this.course_level}}
+                </li>
+                {{/each}}
+            </ul>
+        </table>
+    </script>
