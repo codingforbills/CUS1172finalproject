@@ -64,12 +64,12 @@ app.get('/api/by_Course_L/:qlvl', (req, res) => {
     res.json(outputJSON);
 })
 // Professor & Level
-app.get('/api/combined_query/:qname/:qlevel', (req, res) => {
+app.get('/api/by_NM_n_LV/:qname/:qlevel', (req, res) => {
     let Name = req.params['qname']
     let Level = req.params['qlevel']
     coursefiltered = course["course"].filter(
         q => {
-            if ((q.professor.includes(Name)) && (q.Course_PnL.includes(level))) {
+            if ((q.professor.includes(Name)) && (q.course_lvl.includes(level))) {
                 return true;
             }
             return false;

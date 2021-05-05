@@ -21,32 +21,31 @@
 
     <form onsubmit="return false;" id="queryForm"><hr>
 
-        <!--Course Code-->
+        <!--1. Course Code-->
         <label for="codeQuery"> Search by Course Code</label>
         <input type="text" id="codeQuery" name="codeQuery" value=""><br>
         <input id="queryByCode" type="button" onclick="updateView(this)" value="Query" data-querytype="by_Course_C">
         <br>
-        <!--Course Title-->
+        <!--2. Course Title-->
          <label for="titleQuery"> Search by Course Title</label>
         <input type="text" id="titleQuery" name="titleQuery" value=""><br>
         <input id="queryByTitle" type="button" onclick="updateView(this)" value="Query" data-querytype="by_title">
         <br>
-        <!--Course Instructor-->
+        <!--3. Course Instructor-->
         <label for="profQuery"> Search by Course Instructor</label>
         <input type="text" id="profQuery" name="profQuery" value=""><br>
         <input id="queryByProf" type="button" onclick="updateView(this)" value="Query" data-querytype="by_professor">
         <br>
-
-        <!--Course Level-->
-        <label for="codeQuery"> Search by Course level</label>
-        <input type="text" id="codeQuery" name="codeQuery" value=""><br>
-        <input id="queryByLV" type="button" onclick="updateView(this)" value="Query" data-querytype="by_course_lvl">
+        <!--4. Course Level (Update and Match Names!!)--> 
+        <label for="lvlQuery"> Search by Course level</label>
+        <input type="text" id="lvlQuery" name="lvlQuery" value=""><br>
+        <input id="queryByLV" type="button" onclick="updateView(this)" value="Query" data-querytype="by_Course_L">
         <br>
-        <!--Course Level & Instructor-->
+        <!--5. Course Level & Instructor-->
         <label for="lvl&nmQuery"> Search by Course level and instructor</label>
-        <input type="text" id="levQuery" name="levQuery" value=""><br>
+        <input type="text" id="lvlQuery" name="lvlQuery" value=""><br>
         <input type="text" id="nmQuery" name="nmQuery" value=""><br>
-        <input id="queryNM&LV" type="button" onclick="updateView(this)" value="Query" data-querytype="queryNM&LV">
+        <input id="queryNMnLV" type="button" onclick="updateView(this)" value="Query" data-querytype="by_NM_n_LV">
         <br>
     </form>
     <div id="results">
