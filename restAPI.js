@@ -16,7 +16,6 @@ Course Level Route { }
 Professor & CLevel { }
 
 
-
 */
 
 var express = require("express");
@@ -29,14 +28,14 @@ const {
 let rawdata = fs.readFileSync('./course.json');
 let course = JSON.parse(rawdata);
 
-//Routes
+//This set Defines the Routes necessary
 app.get('/api', (req, res) => {
-let outputJSON = {
-    courses: course["course"]
-}
-res.JSON(outputJSON);
+    let outputJSON = {
+        courses: course["course"]
+    }
+    res.JSON(outputJSON);
 })
-//Code Route
+// CCode Route
 app.get('/api/by_Course_C/:qcode', (req, res) => {
     let query = req.params['qcode']
     coursefiltered = course["course"].filter(q => q.Course_C.includes(query))
@@ -45,7 +44,7 @@ app.get('/api/by_Course_C/:qcode', (req, res) => {
     }
     res.json(outputJSON);
 })
-//Professor
+//Professor Route
 app.get('/api/by_professor/:qname', (req, res) => {
     let query = req.params['qname']
     coursefiltered = course["course"].filter(q => q.professor.includes(query))
@@ -56,7 +55,7 @@ app.get('/api/by_professor/:qname', (req, res) => {
 })
 
 //Course Level
-app.get('/api/by_Course_C/:qlvl', (req, res) => {
+app.get('/api/by_Course_L/:qlvl', (req, res) => {
     let query = req.params['qlvl']
     coursefiltered = course["course"].filter(q => q.course_lvl.includes(query))
     let outputJSON = {
@@ -66,25 +65,26 @@ app.get('/api/by_Course_C/:qlvl', (req, res) => {
 })
 // Professor & Level
 app.get('/api/combined_query/:qname/:qlevel', (req, res) => {
-            let Name = req.params['qname']
-            let Level = req.params['qlevel']
-            coursefiltered = course["course"].filter(
-                    q => {
-                        if ((q.professor.includes(Name)) && (q.Course_L.includes(level))) {
-                            return true;
-                        }
-                        return false;
-                    }
-                );
-                let outputJSON = {
-                    courses: coursefiltered
-                }
-                res.json(outputJSON);
-            })
-        app.use('/demo', express.static('FE')); //FE stands for "Front End"
+    let Name = req.params['qname']
+    let Level = req.params['qlevel']
+    coursefiltered = course["course"].filter(
+        q => {
+            if ((q.professor.includes(Name)) && (q.Course_PnL.includes(level))) {
+                return true;
+            }
+            return false;
+        }
+    );
+    let outputJSON = {
+        courses: coursefiltered
+    }
+    res.json(outputJSON);
+})
+app.use('/demo', express.static('FE')); //FE stands for "Front End"
 
-        //Initiate Server
+//Initiate Server
 
-        var PORT = process.env.PORT || 3000; app.listen(PORT, function () {
-            console.log("Server Connected! Running...");
-        })
+var PORT = process.env.PORT || 3000;
+app.listen(PORT, function () {
+    console.log("Server Connected! Running...");
+})

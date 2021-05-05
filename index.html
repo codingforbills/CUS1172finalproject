@@ -1,6 +1,6 @@
 <html>
     <head>
-        <meta name="viewport" content="width=device-width", initial-scale=1.0">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
         <!-- Apply Bootstrap CDN-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <!-- Apply CSS Sheet-->
@@ -24,23 +24,23 @@
         <!--Course Code-->
         <label for="codeQuery"> Search by Course Code</label>
         <input type="text" id="codeQuery" name="codeQuery" value=""><br>
-        <input id="queryByCode" type="button" onclick="updateView(this)" value="Query" data-querytype="bycc">
+        <input id="queryByCode" type="button" onclick="updateView(this)" value="Query" data-querytype="by_Course_C">
         <br>
         <!--Course Title-->
-         <label for="codeQuery"> Search by Course Title</label>
-        <input type="text" id="codeQuery" name="codeQuery" value=""><br>
-        <input id="queryByCode" type="button" onclick="updateView(this)" value="Query" data-querytype="bycc">
+         <label for="titleQuery"> Search by Course Title</label>
+        <input type="text" id="titleQuery" name="titleQuery" value=""><br>
+        <input id="queryByTitle" type="button" onclick="updateView(this)" value="Query" data-querytype="by_title">
         <br>
         <!--Course Instructor-->
-        <label for="codeQuery"> Search by Course Instructor</label>
-        <input type="text" id="codeQuery" name="codeQuery" value=""><br>
-        <input id="queryByCode" type="button" onclick="updateView(this)" value="Query" data-querytype="bycc">
+        <label for="profQuery"> Search by Course Instructor</label>
+        <input type="text" id="profQuery" name="profQuery" value=""><br>
+        <input id="queryByProf" type="button" onclick="updateView(this)" value="Query" data-querytype="by_professor">
         <br>
 
         <!--Course Level-->
         <label for="codeQuery"> Search by Course level</label>
         <input type="text" id="codeQuery" name="codeQuery" value=""><br>
-        <input id="queryByCode" type="button" onclick="updateView(this)" value="Query" data-querytype="bycc">
+        <input id="queryByLV" type="button" onclick="updateView(this)" value="Query" data-querytype="by_course_lvl">
         <br>
         <!--Course Level & Instructor-->
         <label for="lvl&nmQuery"> Search by Course level and instructor</label>
