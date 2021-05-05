@@ -9,11 +9,11 @@ Self- Note: This portion requires you to enter npm install express to work
 Checklist:
 
 Routes
-Code Route { }
-Title Route { }
-Professor Route { }
-Course Level Route { }
-Professor & CLevel { }
+Code Route {√}
+Title Route { } GET THE TITLE!!!!!
+Professor Route {√}
+Course Level Route {√}
+Professor & Course Level {√}
 
 
 */

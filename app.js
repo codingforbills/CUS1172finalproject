@@ -22,9 +22,9 @@ var updateView = async (button) => {
     api = "https://${URL}/api/by_course_lvl/${queryvalue}";
   }
   //Professor & Level
-  if (button.dataset.query == "by_course_code") {
-    let queryvalue = document.querySelector("#codeQuery").value;
-    api = "https://${URL}/api/by_course_code/${queryvalue}";
+  if (button.dataset.query == "by_NM_n_LV") {
+    let queryvalue = document.querySelector("#???Query").value;
+    api = "https://${URL}/api/by_NM_n_LV/${queryvalue}";
   }
   const data = await fetch(api);
   const model = await data.json();
