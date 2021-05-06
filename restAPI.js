@@ -44,6 +44,16 @@ app.get('/api/by_Course_C/:qcode', (req, res) => {
     }
     res.json(outputJSON);
 })
+
+// Title Route
+app.get('/api/by_title/:qtitle', (req, res) => {
+    let query = req.params['qtitle']
+    coursefiltered = course["course"].filter(q => q.Course_C.includes(query))
+    let outputJSON = {
+        courses: coursefiltered
+    }
+    res.json(outputJSON);
+})
 //Professor Route
 app.get('/api/by_professor/:qname', (req, res) => {
     let query = req.params['qname']
@@ -64,9 +74,9 @@ app.get('/api/by_Course_L/:qlvl', (req, res) => {
     res.json(outputJSON);
 })
 // Professor & Level
-app.get('/api/by_NM_n_LV/:qname/:qlevel', (req, res) => {
+app.get('/api/by_NM_n_LV/:qname/:qlvl', (req, res) => {
     let Name = req.params['qname']
-    let Level = req.params['qlevel']
+    let Level = req.params['qlvl']
     coursefiltered = course["course"].filter(
         q => {
             if ((q.professor.includes(Name)) && (q.course_lvl.includes(level))) {

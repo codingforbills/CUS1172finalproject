@@ -13,7 +13,7 @@ var updateView = async (button) => {
   }
   //Professor Query (OK!)
   if (button.dataset.query == "by_professor") {
-    let queryvalue = document.querySelector("#professorQuery").value;
+    let queryvalue = document.querySelector("#profQuery").value;
     api = "https://${URL}/api/by_professor/${queryvalue}";
   }
   //Course Level Query (OK!)
@@ -23,7 +23,7 @@ var updateView = async (button) => {
   }
   //Professor & Level
   if (button.dataset.query == "by_NM_n_LV") {
-    let queryvalue = document.querySelector("#???Query").value;
+    let queryvalue = document.querySelector("queryNMnLV").value;
     api = "https://${URL}/api/by_NM_n_LV/${queryvalue}";
   }
   const data = await fetch(api);
