@@ -10,10 +10,20 @@ Checklist:
 
 Routes
 Code Route {√}
-Title Route { } GET THE TITLE!!!!!
+Title Route {√} GET THE TITLE!!!!!
 Professor Route {√}
 Course Level Route {√}
 Professor & Course Level {√}
+
+Checklist:
+
+Routes
+Code Route {√}
+Title Route {√} GET THE TITLE!!!!!
+Professor Route {√}
+Course Level Route {√}
+Professor & Course Level {√}
+
 
 
 */
