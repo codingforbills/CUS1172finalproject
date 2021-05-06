@@ -1,7 +1,7 @@
 {
     "name": "FinalProject",
     "version": "1.0.0",
-    "desc": "",
+    "desc": "node api host hosted on Heroku",
     "main": "restAPI.js",
     "dependencies": {
         "express": "^4.17.1",

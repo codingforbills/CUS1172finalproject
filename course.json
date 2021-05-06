@@ -1,7 +1,7 @@
+  
 {
-
-    "courses": [
-        {
+	"course": [{
+        
             "Course_L": "Undergraduate (UG)",
             "Course_C": "CUS 1102",
             "Title": "Software Application",

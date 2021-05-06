@@ -2,22 +2,22 @@
 var URL = window.location.hostname;
 var updateView = async (button) => {
   //Title Query
-  if (button.dataset.query == "by_title") {
+  if (button.dataset.query == "by_Title") {
     let queryvalue = document.querySelector("#titleQuery").value;
     api = "https://${URL}/api/by_title/${queryvalue}";
   }
   //Course Code Query (OK!)
-  if (button.dataset.query == "by_course_C") {
+  if (button.dataset.query == "by_Course_C") {
     let queryvalue = document.querySelector("#codeQuery").value;
     api = "https://${URL}/api/by_course_C/${queryvalue}";
   }
   //Professor Query (OK!)
-  if (button.dataset.query == "by_professor") {
+  if (button.dataset.query == "by_Professor") {
     let queryvalue = document.querySelector("#profQuery").value;
     api = "https://${URL}/api/by_professor/${queryvalue}";
   }
   //Course Level Query (OK!)
-  if (button.dataset.query == "by_course_lvl") {
+  if (button.dataset.query == "by_Course_L") {
     let queryvalue = document.querySelector("#lvlQuery").value;
     api = "https://${URL}/api/by_course_lvl/${queryvalue}";
   }

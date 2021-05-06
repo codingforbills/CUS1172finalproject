@@ -29,7 +29,10 @@ Professor & Course Level {√}
 */
 
 var express = require("express");
+var cors = require('cors');
 var app = express();
+
+
 
 const fs = require('fs');
 const {
@@ -41,7 +44,7 @@ let course = JSON.parse(rawdata);
 //This set Defines the Routes necessary
 app.get('/api', (req, res) => {
     let outputJSON = {
-        courses: course["course"]
+        course: course["course"]
     }
     res.JSON(outputJSON);
 })
@@ -56,18 +59,18 @@ app.get('/api/by_Course_C/:qcode', (req, res) => {
 })
 
 // Title Route
-app.get('/api/by_title/:qtitle', (req, res) => {
+app.get('/api/by_Title/:qtitle', (req, res) => {
     let query = req.params['qtitle']
-    coursefiltered = course["course"].filter(q => q.Course_C.includes(query))
+    coursefiltered = course["course"].filter(q => q.Title.includes(query))
     let outputJSON = {
         courses: coursefiltered
     }
     res.json(outputJSON);
 })
 //Professor Route
-app.get('/api/by_professor/:qname', (req, res) => {
+app.get('/api/by_Professor/:qname', (req, res) => {
     let query = req.params['qname']
-    coursefiltered = course["course"].filter(q => q.professor.includes(query))
+    coursefiltered = course["course"].filter(q => q.Professor.includes(query))
     let outputJSON = {
         courses: coursefiltered
     }
@@ -77,7 +80,7 @@ app.get('/api/by_professor/:qname', (req, res) => {
 //Course Level
 app.get('/api/by_Course_L/:qlvl', (req, res) => {
     let query = req.params['qlvl']
-    coursefiltered = course["course"].filter(q => q.course_lvl.includes(query))
+    coursefiltered = course["course"].filter(q => q.Course_L.includes(query))
     let outputJSON = {
         courses: coursefiltered
     }
@@ -86,10 +89,10 @@ app.get('/api/by_Course_L/:qlvl', (req, res) => {
 // Professor & Level
 app.get('/api/by_NM_n_LV/:qname/:qlvl', (req, res) => {
     let Name = req.params['qname']
-    let Level = req.params['qlvl']
+    let level = req.params['qlvl']
     coursefiltered = course["course"].filter(
         q => {
-            if ((q.professor.includes(Name)) && (q.course_lvl.includes(level))) {
+            if ((q.professor.includes(Name)) && (q.Course_L.includes(level))) {
                 return true;
             }
             return false;
@@ -100,11 +103,11 @@ app.get('/api/by_NM_n_LV/:qname/:qlvl', (req, res) => {
     }
     res.json(outputJSON);
 })
-app.use('/demo', express.static('FE')); //FE stands for "Front End"
+app.use('/demo', express.static('/Front_End')); //FE stands for "Front End"
 
 //Initiate Server
 
 var PORT = process.env.PORT || 3000;
 app.listen(PORT, function () {
-    console.log("Server Connected! Running...");
-})
+    console.log('Server Connected! Running... ${port}')
+});

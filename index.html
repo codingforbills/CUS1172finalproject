@@ -29,12 +29,12 @@
         <!--2. Course Title-->
          <label for="titleQuery"> Search by Course Title</label>
         <input type="text" id="titleQuery" name="titleQuery" value=""><br>
-        <input id="queryByTitle" type="button" onclick="updateView(this)" value="Query" data-querytype="by_title">
+        <input id="queryByTitle" type="button" onclick="updateView(this)" value="Query" data-querytype="by_Title">
         <br>
         <!--3. Course Instructor-->
         <label for="profQuery"> Search by Course Instructor</label>
         <input type="text" id="profQuery" name="profQuery" value=""><br>
-        <input id="queryByProf" type="button" onclick="updateView(this)" value="Query" data-querytype="by_professor">
+        <input id="queryByProf" type="button" onclick="updateView(this)" value="Query" data-querytype="by_Professor">
         <br>
         <!--4. Course Level (Update and Match Names!!)--> 
         <label for="lvlQuery"> Search by Course level</label>
@@ -60,10 +60,10 @@
                     #all courses
                 }}
                 <li>
-                    CODE:{{this.course_code}} |
-                    TITLE:{{this.title}} |
-                    PROFESSOR:{{this.professor}} |
-                    LEVEL: {{this.course_level}} |
+                    CODE:{{this.Course_C}} |
+                    TITLE:{{this.Title}} |
+                    PROFESSOR:{{this.Professor}} |
+                    LEVEL: {{this.Course_L}} |
                 </li>
                 {{/each}}
             </ul>
