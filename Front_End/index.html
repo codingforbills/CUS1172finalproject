@@ -1,11 +1,11 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
-    <!-- Apply Bootstrap CDN-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Apply CSS Sheet-->
     <link rel="stylesheet" href="cascade.css">
+    <!-- Apply Bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!--Apply Bootstrap and Handlebars.js-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -22,33 +22,44 @@
     </div>
 
     <form onsubmit="return false;" id="queryForm">
+        <br>
         <hr>
-
+        <br>
         <!--1. Course Code-->
         <label for="codeQuery"> Search by Course Code</label>
         <input type="text" id="codeQuery" name="codeQuery" value=""><br>
         <input id="queryByCode" type="button" onclick="updateView(this)" value="Query" data-querytype="by_course_code">
+        <br>
+        <hr>
         <br>
         <!--2. Course Title-->
         <label for="titleQuery"> Search by Course Title</label>
         <input type="text" id="titleQuery" name="titleQuery" value=""><br>
         <input id="queryByTitle" type="button" onclick="updateView(this)" value="Query" data-querytype="by_Title">
         <br>
+        <hr>
+        <br>
         <!--3. Course Instructor-->
         <label for="profQuery"> Search by Course Instructor</label>
         <input type="text" id="profQuery" name="profQuery" value=""><br>
         <input id="queryByProf" type="button" onclick="updateView(this)" value="Query" data-querytype="by_professor">
+        <br>
+        <hr>
         <br>
         <!--4. Course Level (Update and Match Names!!)-->
         <label for="lvlQuery"> Search by Course level</label>
         <input type="text" id="lvlQuery" name="lvlQuery" value=""><br>
         <input id="queryByLVL" type="button" onclick="updateView(this)" value="Query" data-querytype="by_course_level">
         <br>
+        <hr>
+        <br>
         <!--5. Course Level & Instructor-->
         <label for="lvl&nmQuery"> Search by Course level and instructor</label>
         <input type="text" id="lvlQuery" name="lvlQuery" value=""><br>
         <input type="text" id="profQuery" name="profQuery" value=""><br>
         <input id="queryNMnLV" type="button" onclick="updateView(this)" value="Query" data-querytype="by_NM_n_LV">
+        <br>
+        <hr>
         <br>
     </form>
     <div id="results">
@@ -61,13 +72,13 @@
     <table>
             <ul>
                 {{
-                    #all courses
+                    #each courses
                 }}
                 <li>
                     CODE:{{this.course_code}} |
                     TITLE:{{this.Title}} |
                     PROFESSOR:{{this.Professor}} |
-                    LEVEL: {{this.course_level}} |
+                    LEVEL: {{this.course_level}} 
                 </li>
                 {{/each}}
             </ul>
