@@ -2,7 +2,7 @@
 Robert Bills
 05.05.21
 CUS1172 - Assignment 4
-SJU CUS Course Delievery 
+SJU CUS Course Delivery 
 
 Self- Note: This portion requires you to enter npm install express to work
 
@@ -34,16 +34,14 @@ var app = express();
 
 
 const fs = require('fs');
-//const {
-//parse
-//} = require("path");
-let rawdata = fs.readFileSync('../courses.json');
+const { parse } = require("path");
+let rawdata = fs.readFileSync('/Back_End/courses.json');
 let course = JSON.parse(rawdata);
 
 //This set Defines the Routes necessary
 app.get('/api', (req, res) => {
     let outputJSON = {
-        course: course["courses"]
+        courses: course["courses"]
     }
     res.JSON(outputJSON);
 })
@@ -52,7 +50,7 @@ app.get('/api/by_course_code/:qcode', (req, res) => {
     let query = req.params['qcode']
     coursefiltered = course["courses"].filter(q => q.course_code.includes(query))
     let outputJSON = {
-        course: coursefiltered
+        courses: coursefiltered
     }
     res.json(outputJSON);
 })
@@ -62,7 +60,7 @@ app.get('/api/by_title/:qtitle', (req, res) => {
     let query = req.params['qtitle']
     coursefiltered = course["courses"].filter(q => q.Title.includes(query))
     let outputJSON = {
-        course: coursefiltered
+        courses: coursefiltered
     }
     res.json(outputJSON);
 })
@@ -71,7 +69,7 @@ app.get('/api/by_Professor/:qname', (req, res) => {
     let query = req.params['qname']
     coursefiltered = course["courses"].filter(q => q.Professor.includes(query))
     let outputJSON = {
-        course: coursefiltered
+        courses: coursefiltered
     }
     res.json(outputJSON);
 })
@@ -81,7 +79,7 @@ app.get('/api/by_course_level/:qlvl', (req, res) => {
     let query = req.params['qlvl']
     coursefiltered = course["courses"].filter(q => q.course_level.includes(query))
     let outputJSON = {
-        course: coursefiltered
+        courses: coursefiltered
     }
     res.json(outputJSON);
 })
@@ -98,11 +96,11 @@ app.get('/api/by_NM_n_LV/:qname/:qlvl', (req, res) => {
         }
     );
     let outputJSON = {
-        course: coursefiltered
+        courses: coursefiltered
     }
     res.json(outputJSON);
 })
-app.use('/demo', express.static('../Front_End')); //FE stands for "Front End"
+app.use('/demo', express.static('./Front_End')); //FE stands for "Front End"
 
 //Initiate Server
 
