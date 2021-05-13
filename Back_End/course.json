@@ -1,0 +1,87 @@
+  
+{
+	"course": [{
+        
+            "Course_L": "Undergraduate (UG)",
+            "Course_C": "CUS 1102",
+            "Title": "Software Application",
+            "Professor": "James Swike"
+
+        },
+        {
+            "Course_L": "Undergraduate (UG)",
+            "Course_C": "CUS1115",
+            "Title": "Computer Progr Fund I",
+            "Professor": "Joan DeBello"
+
+        },
+        {
+            "Course_L": "Undergraduate (UG)",
+            "Course_C": "CUS1116",
+            "Title": "Computer Progr Fund II",
+            "Professor": "Christina Schweikert"
+
+        },
+        {
+            "Course_L": "Undergraduate (UG)",
+            "Course_C": "CUS 1126",
+            "Title": "Intro To Data Strctures",
+            "Professor": "Fazel Keshtkar"
+
+        },
+        {
+            "Course_L": "Undergraduate (UG)",
+            "Course_C": "CUS 1156",
+            "Title": "Software Design Methods",
+            "Professor": "Syed Ahmad Chan Bukhari"
+
+        },
+        {
+            "Course_L": "Graduate (G)",
+            "Course_C": "CUS 710",
+            "Title": "Compiler Design",
+            "Professor": "Nikhil Yadav"
+
+        },
+        {
+            "Course_L": "Undergraduate (UG)",
+            "Course_C": "CUS1172",
+            "Title": "Web Application Development",
+            "Professor": "Dr. Christoforos Christoforou"
+
+        },
+        {
+            "Course_L": "Undergraduate (UG)",
+            "Course_C": "CUS1156",
+            "Title": "Software Design Methods",
+            "Professor": "Dr. Puya Ghazizadeh"
+
+        },
+        {
+            "Course_L": "Undergraduate (UG)",
+            "Course_C": "CUS1163",
+            "Title": "Operating Systems",
+            "Professor": "Dr. Christina Schweikert"
+
+        },
+        {
+            "Course_L": "Undergraduate (UG)",
+            "Course_C": "CUS725",
+            "Title": "Advanced Database Management Systems",
+            "Professor": "Dr. Bonnie MacKellar"
+
+        },
+        {
+			"Course_L": "Graduate",
+            "Course_C": "CUS615",
+			"Title": "Data Mining and Predictive Modeling II",
+			"Professor": "Dr. Christoforos Christoforou"
+		},
+        {
+			"Course_L": "Graduate",
+            "Course_C": "CUS754",
+			"Title": "Computer Vision and Applications",
+			"Professor": "Dr. Christoforos Christoforou"
+		}
+    ]
+}
