@@ -29,7 +29,6 @@ Professor & Course Level {√}
 */
 
 var express = require("express");
-var cors = require('cors');
 var app = express();
 
 
@@ -49,9 +48,9 @@ app.get('/api', (req, res) => {
     res.JSON(outputJSON);
 })
 // CCode Route
-app.get('/api/by_Course_C/:qcode', (req, res) => {
+app.get('/api/by_course_C/:qcode', (req, res) => {
     let query = req.params['qcode']
-    coursefiltered = course["course"].filter(q => q.Course_C.includes(query))
+    coursefiltered = course["course"].filter(q => q.course_C.includes(query))
     let outputJSON = {
         courses: coursefiltered
     }
@@ -59,18 +58,18 @@ app.get('/api/by_Course_C/:qcode', (req, res) => {
 })
 
 // Title Route
-app.get('/api/by_Title/:qtitle', (req, res) => {
+app.get('/api/by_title/:qtitle', (req, res) => {
     let query = req.params['qtitle']
-    coursefiltered = course["course"].filter(q => q.Title.includes(query))
+    coursefiltered = course["course"].filter(q => q.title.includes(query))
     let outputJSON = {
         courses: coursefiltered
     }
     res.json(outputJSON);
 })
 //Professor Route
-app.get('/api/by_Professor/:qname', (req, res) => {
+app.get('/api/by_professor/:qname', (req, res) => {
     let query = req.params['qname']
-    coursefiltered = course["course"].filter(q => q.Professor.includes(query))
+    coursefiltered = course["course"].filter(q => q.professor.includes(query))
     let outputJSON = {
         courses: coursefiltered
     }
@@ -78,9 +77,9 @@ app.get('/api/by_Professor/:qname', (req, res) => {
 })
 
 //Course Level
-app.get('/api/by_Course_L/:qlvl', (req, res) => {
+app.get('/api/by_course_L/:qlvl', (req, res) => {
     let query = req.params['qlvl']
-    coursefiltered = course["course"].filter(q => q.Course_L.includes(query))
+    coursefiltered = course["course"].filter(q => q.course_L.includes(query))
     let outputJSON = {
         courses: coursefiltered
     }
@@ -92,7 +91,7 @@ app.get('/api/by_NM_n_LV/:qname/:qlvl', (req, res) => {
     let level = req.params['qlvl']
     coursefiltered = course["course"].filter(
         q => {
-            if ((q.professor.includes(Name)) && (q.Course_L.includes(level))) {
+            if ((q.professor.includes(Name)) && (q.course_L.includes(level))) {
                 return true;
             }
             return false;

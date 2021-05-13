@@ -1,57 +1,45 @@
 <html>
+    <head>
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <!-- Apply Bootstrap CDN-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- Apply CSS Sheet-->
+        <link rel="stylesheet" href="/Front_End/cascade.css">
+        <!--Apply Bootstrap and Handlebars.js-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Apply CSS Sheet-->
-    <link rel="stylesheet" href="cascade.css">
-    <!-- Apply Bootstrap CDN-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!--Apply Bootstrap and Handlebars.js-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        <!--Apply Javascript-->
+        <script src="/Front_End/app.js"></script>"
+    </head>
+    <body>
+        <div class= "container pt-3">
+            <h2>The SJU CUS Directory</h2>
+        </div>
 
-    <!--Apply Javascript-->
-    <script src="app.js"></script>"
-</head>
+    <form onsubmit="return false;" id="queryForm"><hr>
 
-<body>
-    <div class="container p1">
-        <h2>The SJU CUS Directory</h2>
-    </div>
-
-    <form onsubmit="return false;" id="queryForm">
-        <br>
-        <hr>
-        <br>
         <!--1. Course Code-->
         <label for="codeQuery"> Search by Course Code</label>
         <input type="text" id="codeQuery" name="codeQuery" value=""><br>
-        <input id="queryByCode" type="button" onclick="updateView(this)" value="Query" data-querytype="by_course_code">
-        <br>
-        <hr>
+        <input id="queryByCode" type="button" onclick="updateView(this)" value="Query" data-querytype="by_course_C">
         <br>
         <!--2. Course Title-->
-        <label for="titleQuery"> Search by Course Title</label>
+         <label for="titleQuery"> Search by Course Title</label>
         <input type="text" id="titleQuery" name="titleQuery" value=""><br>
-        <input id="queryByTitle" type="button" onclick="updateView(this)" value="Query" data-querytype="by_Title">
-        <br>
-        <hr>
+        <input id="queryByTitle" type="button" onclick="updateView(this)" value="Query" data-querytype="by_title">
         <br>
         <!--3. Course Instructor-->
         <label for="profQuery"> Search by Course Instructor</label>
         <input type="text" id="profQuery" name="profQuery" value=""><br>
         <input id="queryByProf" type="button" onclick="updateView(this)" value="Query" data-querytype="by_professor">
         <br>
-        <hr>
-        <br>
-        <!--4. Course Level (Update and Match Names!!)-->
+        <!--4. Course Level (Update and Match Names!!)--> 
         <label for="lvlQuery"> Search by Course level</label>
         <input type="text" id="lvlQuery" name="lvlQuery" value=""><br>
-        <input id="queryByLVL" type="button" onclick="updateView(this)" value="Query" data-querytype="by_course_level">
-        <br>
-        <hr>
+        <input id="queryByLVL" type="button" onclick="updateView(this)" value="Query" data-querytype="by_course_L">
         <br>
         <!--5. Course Level & Instructor-->
         <label for="lvl&nmQuery"> Search by Course level and instructor</label>
@@ -59,26 +47,23 @@
         <input type="text" id="profQuery" name="profQuery" value=""><br>
         <input id="queryNMnLV" type="button" onclick="updateView(this)" value="Query" data-querytype="by_NM_n_LV">
         <br>
-        <hr>
-        <br>
     </form>
     <div id="results">
         <!--Show Results-->
     </div>
 </body>
-
 </html>
-<script id="results_view" type="text/x-handlebars-template">
-    <table>
+    <script id="results_view" type="text/x-handlebars-template">
+        <table>
             <ul>
                 {{
-                    #each courses
+                    #all courses
                 }}
                 <li>
-                    CODE:{{this.course_code}} |
-                    TITLE:{{this.Title}} |
-                    PROFESSOR:{{this.Professor}} |
-                    LEVEL: {{this.course_level}} 
+                    CODE:{{this.course_C}} |
+                    TITLE:{{this.title}} |
+                    PROFESSOR:{{this.professor}} |
+                    LEVEL: {{this.course_L}} |
                 </li>
                 {{/each}}
             </ul>
